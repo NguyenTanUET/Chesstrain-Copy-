@@ -1,0 +1,63 @@
+[package]
+name = "bullet_lib"
+version = "1.0.0"
+description = "Neural Network Trainer"
+authors = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+readme = { workspace = true }
+rust-version = { workspace = true }
+edition = { workspace = true }
+
+[features]
+default = ["hip-cuda"]
+cpu = []
+cuda = ["bullet_cuda_backend"]
+hip = ["bullet_hip_backend", "bullet_hip_backend/hip"]
+hip-cuda = ["bullet_hip_backend"]
+gh-actions = ["bullet_hip_backend/gh-actions"]
+
+[dependencies]
+bullet_cuda_backend = { workspace = true, optional = true }
+bullet_hip_backend = { workspace = true, optional = true }
+bullet_core = { workspace = true }
+bulletformat = { workspace = true }
+montyformat = { workspace = true }
+sfbinpack = "0.4.1"
+viriformat = "1.0.0"
+
+[[example]]
+name = "advanced"
+path = "../../examples/advanced.rs"
+
+[[example]]
+name = "simple"
+path = "../../examples/simple.rs"
+
+[[example]]
+name = "testnet"
+path = "../../examples/testnet.rs"
+
+[[example]]
+name = "morelayers"
+path = "../../examples/morelayers.rs"
+
+[[example]]
+name = "akimbo-main"
+path = "../../examples/extra/akimbo-main.rs"
+
+[[example]]
+name = "ataxx"
+path = "../../examples/extra/ataxx.rs"
+
+[[example]]
+name = "relabel"
+path = "../../examples/extra/relabel.rs"
+
+[[example]]
+name = "attention"
+path = "../../examples/extra/attention.rs"
+
+[[example]]
+name = "policy"
+path = "../../examples/extra/policy.rs"
