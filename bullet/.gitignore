@@ -5,7 +5,6 @@
 /.idea
 /.vscode
 /visualisation
-/data
 
 *.epd
 *.txt
